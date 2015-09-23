@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var swig = require('swig');
 var passport = require('passport');
 var session = require('express-session');
+var mongoose = require('mongoose');
 
 
 // *** routes *** //
@@ -16,6 +17,8 @@ var routes = require('./routes/index.js');
 
 // *** express instance *** //
 var app = express();
+
+mongoose.connect('mongodb://localhost/passport-social-auth');
 
 // *** view engine *** //
 var swig = new swig.Swig();
